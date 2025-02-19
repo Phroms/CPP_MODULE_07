@@ -6,11 +6,11 @@
 #    By: agrimald <agrimald@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/19 18:38:04 by agrimald          #+#    #+#              #
-#    Updated: 2025/02/19 18:57:58 by agrimald         ###   ########.fr        #
+#    Updated: 2025/02/19 19:32:52 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = prueba
+NAME = 
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
