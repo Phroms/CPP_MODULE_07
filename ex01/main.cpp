@@ -1,54 +1,36 @@
 # include "iter.hpp"
-#include <iostream>
-#include <Array.hpp>
 
-#define MAX_VAL 750
-int main(int, char**)
+void incrementInt(int &x)
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
+	x = x + 2;
+}
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+template <typename T>
+void printArray(T &elements)
+{
+	std::cout << elements << std::endl;
+}
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+int main()
+{
+	std::cout << "\033[93m\n----Test with int----\n\033[0m" << std::endl;
+
+	int array[] = {1, 2, 3, 4, 5};
+	size_t size = sizeof(array) / sizeof(array[0]);
+	::iter(array, size, printArray<int>);
+
+	std::cout << "\033[93m\n----Test increment int----\n\033[0m" << std::endl;
+
+	int array2[] = {10, 20, 40, 50, 80};
+	size_t size_2 = sizeof(array2) / sizeof(array2[0]);
+	::iter(array2, size_2, incrementInt);
+	::iter(array2, size_2, printArray<int>);
+
+	std::cout << "\033[93m\n----Test with string----\n\033[0m" << std::endl;
+
+	std::string str[] = {"Hello", "World", "Chaooo"};
+	size_t size_3 = sizeof(str) / sizeof(str[0]);
+	::iter(str, size_3, printArray<std::string>);
+
+	std::cout << "\n" << std::endl;
 }
