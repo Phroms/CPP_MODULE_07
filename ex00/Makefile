@@ -6,11 +6,11 @@
 #    By: agrimald <agrimald@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/19 18:38:04 by agrimald          #+#    #+#              #
-#    Updated: 2025/02/19 19:32:52 by agrimald         ###   ########.fr        #
+#    Updated: 2025/02/20 13:27:34 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = Swap
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
@@ -21,7 +21,7 @@ END_COLOR = \033[0m
 
 SRC = main.cpp
 
-INC = main.hpp
+INC = whatever.hpp
 
 OBJECTS = $(SRC:.cpp=.o)
 
