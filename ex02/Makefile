@@ -6,7 +6,7 @@
 #    By: agrimald <agrimald@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/20 18:15:04 by agrimald          #+#    #+#              #
-#    Updated: 2025/02/20 18:22:47 by agrimald         ###   ########.fr        #
+#    Updated: 2025/02/20 18:43:46 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ END_COLOR = \033[0m
 
 SRC = main.cpp
 
-INC = main.hpp
+INC = Array.hpp
 
 OBJECTS = $(SRC:.cpp=.o)
 
